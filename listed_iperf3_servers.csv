@@ -1,0 +1,191 @@
+IP/HOST,PORT,GB/S,CONTINENT,COUNTRY,SITE,PROVIDER
+160.242.19.254,9205-9240,,Africa,AO,Luanda,Paratus
+41.110.39.130,5201,10,Africa,DZ,Algiers,DATAPACKET
+213.158.175.240,5201,10,Africa,EG,Cairo,DATAPACKET
+102.214.66.39,5201,2x10,Africa,GH,Accra,DATAPACKET
+102.214.66.19,5201,2x10,Africa,GH,Accra,DATAPACKET
+212.60.92.134,60001-60003,,Africa,GM,Banjul,Pura
+105.235.237.2,5201-5209,,Africa,GQ,Bata,Guineanet
+gw1.malabo.guineanet.net,5201-5209,,Africa,GQ,Bata,Guine@net
+speed.mymanga.pro,9202-9240,,Africa,KE,Nairobi,Mymanga
+speedtestfl.telecom.mu,5201-5209,,Africa,MU,Floreal,Mauritius Telecom
+197.227.12.18,5201-5209,,Africa,MU,Floreal,Mauritius Telecom
+41.210.185.162,5201,2x10,Africa,UG,Kampala,DATAPACKET
+69.48.239.124,30003-30009,10,Africa,ZA,Johannesburg,FortiSASE
+23.249.55.42,30003-30009,10,Asia,AE,Dubai,FortiSASE
+69.48.238.200,30001-30009,10,Asia,AE,Dubai,FortiSASE
+189.25.101.151,30001-30009,10,Asia,AE,Dubai,FortiSASE
+189.25.97.217,30001-30009,10,Asia,AE,Dubai,FortiSASE
+speedtest.hkg12.hk.leaseweb.net,5201-5210,10,Asia,HK,Hong Kong,LeaseWeb
+84.17.57.129,5201,2x10,Asia,HK,Hong Kong,DATAPACKET
+23.249.58.14,30003-30009,10,Asia,HK,Hong Kong,FortiSASE
+speedtest.tangerang2.myrepublic.net.id,9201-9240,,Asia,ID,Kediri,MyRepublic
+speed.netfiber.net.il,5201,1,Asia,IL,Jerusalem,Netfiber
+speed.rimon.net.il,5201,1,Asia,IL,Jerusalem,Rimon
+169.150.202.193,5201,2x10,Asia,IL,Tel Aviv,DATAPACKET
+49.205.75.2,5008-5020,,Asia,IN,Bengaluru,ACT Fibernet
+69.48.236.198,30001-30009,10,Asia,IN,Pune,FortiSASE
+23.249.60.154,30001-30009,10,Asia,JP,Komagome,FortiSASE
+speedtest.tyo11.jp.leaseweb.net,5201-5210,10,Asia,JP,Tokyo,LeaseWeb
+89.187.160.1,5201,2x10,Asia,JP,Tokyo,DATAPACKET
+66.35.31.81,30001-30009,10,Asia,JP,Tokyo,FortiSASE
+coverage1.mobicom.mn,5201-5202,,Asia,MN,Ulaanbaatar,Mobicom
+speedtest.sin1.sg.leaseweb.net,5201-5210,10,Asia,SG,Singapore,LeaseWeb
+89.187.162.1,5201,2x10,Asia,SG,Singapore,DATAPACKET
+sgp.proof.ovh.net,5201-5210,1,Asia,SG,Singapore,OVH
+96.45.38.22,30001-30009,10,Asia,SG,Singapore,FortiSASE
+176.23.128.102,30001-30009,10,Asia,SG,Singapore,FortiSASE
+iperf.pendc.com,5201-5209,10,Asia,TR,Bursa,PENDC
+156.146.52.1,5201,2x10,Asia,TR,Istanbul,DATAPACKET
+69.48.237.66,30001-30009,10,Asia,TR,Istanbul,FortiSASE
+189.25.98.63,30001-30009,10,Asia,TW,Taipei,FortiSASE
+speedtest.uztelecom.uz,5200-5209,10,Asia,UZ,Tashkent,UZ Telecom
+185.180.12.40,5201,2x10,Europe,AT,Vienna,DATAPACKET
+iperf3-vie-at.alwyzon.net,5201-5210,2x100,Europe,AT,Vienna,Alwyzon
+207.211.214.65,5201,2x10,Europe,BE,Brussels,DATAPACKET
+185.3.160.57,5201-5240,,Europe,BE,Liège,VOO
+37.19.203.1,5201,2x10,Europe,BG,Sofia,DATAPACKET
+speedtest.shinternet.ch,5200-5209,10,Europe,CH,Schaffhausen,Sasag
+speedtest.init7.net,5201-5204,20,Europe,CH,Winterthur,Init7
+speedtest.iway.ch,5201,10,Europe,CH,Zürich,iWay
+89.187.165.1,5201,2x10,Europe,CH,Zürich,DATAPACKET
+t5.cscs.ch,5201-5203,100,Europe,CH,Zürich,CSCS
+185.152.65.113,5201,2x10,Europe,CZ,Prague,DATAPACKET
+a209.speedtest.wobcom.de,5201,2x25,Europe,DE,Berlin,WOBCOM
+a110.speedtest.wobcom.de,5201,2x25,Europe,DE,Berlin,WOBCOM
+a208.speedtest.wobcom.de,5201,2x25,Europe,DE,Düsseldorf,WOBCOM
+178.215.228.109,9206-9240,,Europe,DE,Frankfurt,ESEVEN
+fra.speedtest.clouvider.net,5200-5209,10,Europe,DE,Frankfurt,Clouvider
+speedtest.ip-projects.de,5201,10,Europe,DE,Frankfurt,IP Projects
+speedtest.fra1.de.leaseweb.net,5201-5210,10,Europe,DE,Frankfurt,LeaseWeb
+spd-desrv.hostkey.com,5201-5209,10,Europe,DE,Frankfurt,HOSTKEY
+a210.speedtest.wobcom.de,5201,2x25,Europe,DE,Frankfurt,WOBCOM
+a205.speedtest.wobcom.de,5201,2x25,Europe,DE,Frankfurt,WOBCOM
+185.102.219.93,5201,2x10,Europe,DE,Frankfurt,DATAPACKET
+96.45.39.38,30001-30009,10,Europe,DE,Frankfurt,FortiSASE
+speedtest.level66.services,5201-5205,10,Europe,DE,Frankfurt,level66.network
+speedtest.wtnet.de,5200-5209,40,Europe,DE,Norderstedt,wilhelm.tel
+speedtest.wobcom.de,5201,2x25,Europe,DE,Wolfsburg,WOBCOM
+a400.speedtest.wobcom.de,5201,2x25,Europe,DE,Wolfsburg,WOBCOM
+speedtest.hiper.dk,5201-5205,,Europe,DK,Copenhagen,Hiper
+speed1.fiberby.dk,9201-9240,25,Europe,DK,Copenhagen,Fiberby
+speed2.fiberby.dk,9201-9240,25,Europe,DK,Copenhagen,Fiberby
+bwtest.linxtelecom.com,5201-5209,1,Europe,EE,Tallinn,CITIC
+185.93.3.50,5201,2x10,Europe,ES,Madrid,DATAPACKET
+148.230.45.213,30001-30009,10,Europe,ES,Madrid,FortiSASE
+spd-fisrv.hostkey.com,5201-5209,10,Europe,FI,Helsinki,HOSTKEY
+speedtest.milkywan.fr,9200-9240,40,Europe,FR,Croissy-Beaubourg,MilkyWan
+138.199.14.66,5201,2x10,Europe,FR,Marseille,DATAPACKET
+185.93.2.193,5201,2x10,Europe,FR,Paris,DATAPACKET
+iperf3.moji.fr,5200-5240,100,Europe,FR,Paris,moji
+ping-90ms.online.net,5200-5209,100,Europe,FR,Paris,Scaleway
+iperf.online.net,5200-5209,100,Europe,FR,Paris,Scaleway
+96.45.42.156,30001-30009,10,Europe,FR,Paris,FortiSASE
+96.45.41.167,30001-30009,10,Europe,FR,Valbonne,FortiSASE
+ping.online.net,5200-5209,100,Europe,FR,Vitry-sur-Seine,Scaleway
+iperf.as42831.net,5300-5400,,Europe,GB,London,UK Servers
+speedtest.lon1.uk.leaseweb.net,5202-5210,10,Europe,GB,London,LeaseWeb
+speedtest.lon12.uk.leaseweb.net,5201-5210,10,Europe,GB,London,LeaseWeb
+lon.speedtest.clouvider.net,5200-5209,10,Europe,GB,London,Cloudvider
+185.59.221.51,5201,2x10,Europe,GB,London,DATAPACKET
+speedtest2.lightningfibre.net.uk,4000-4007,10,Europe,GB,London,Lightning Fibre
+96.45.40.45,30001-30009,10,Europe,GB,London,FortiSASE
+speedtest.rapidswitch.com,5201-5209,1,Europe,GB,Maidenhead,RapidSwitch
+man.speedtest.clouvider.net,5200-5209,10,Europe,GB,Manchester,Clouvider
+169.150.252.2,5201,2x10,Europe,GR,Athens,DATAPACKET
+169.150.242.129,5201,2x10,Europe,HR,Zagreb,DATAPACKET
+87.249.137.8,5201,2x10,Europe,IE,Dublin,DATAPACKET
+spd-icsrv.hostkey.com,5201-5209,10,Europe,IS,Reykjavik,HOSTKEY
+it1.speedtest.aruba.it,5201,,Europe,IT,Arezzo,Aruba.it
+84.17.59.129,5201,2x10,Europe,IT,Milan,DATAPACKET
+217.61.40.96,5201,,Europe,IT,Ponte San Pietro,Aruba.it
+speed-cb.dimensione.com,5201-5209,10,Europe,IT,Rome,Dimensione
+speedtestlondon.telecom.mu,5201-5209,,Europe,MU,London,Mauritius Telecom
+speedtest.ams1.nl.leaseweb.net,5201-5210,10,Europe,NL,Amsterdam,LeaseWeb
+speedtest.ams2.nl.leaseweb.net,5201-5210,10,Europe,NL,Amsterdam,LeaseWeb
+ams.speedtest.clouvider.net,5200-5209,10,Europe,NL,Amsterdam,Clouvider
+ping-ams1.online.net,5201-5209,10,Europe,NL,Amsterdam,Scaleway
+a204.speedtest.wobcom.de,5201,2x25,Europe,NL,Amsterdam,WOBCOM
+185.102.218.1,5201,2x10,Europe,NL,Amsterdam,DATAPACKET
+iperf-ams-nl.eranium.net,5201-5210,100,Europe,NL,Amsterdam,Eranium
+speedtest.netone.nl,5201,10,Europe,NL,Amsterdam,NetOne
+lg.ams-nl.gigahost.no,9201-9240,100,Europe,NL,Amsterdam,Gigahost
+speedtest.nl1.mirhosting.net,5201-5210,20,Europe,NL,Dronten,Mirhosting
+nl.speed.vps1.net,5201-5210,,Europe,NL,Dronten,vps1
+iperf1.surfwireless.nl,5201-5220,,Europe,NL,Lelystad,SURFnet
+iperf.worldstream.nl,5201-5205,10,Europe,NL,Naaldwijk,Worldstream
+lg.gigahost.no,9205-9240,100,Europe,NO,Sandefjord,Gigahost
+speedsrv.multinet24.pl,5301-5310,1,Europe,PL,Debica,Multinet24
+185.246.208.67,5201,2x10,Europe,PL,Warsaw,DATAPACKET
+109.61.94.65,5201,2x10,Europe,PT,Lisbon,DATAPACKET
+185.102.217.170,5201,2x10,Europe,RO,Bucharest,DATAPACKET
+speedtest1.sox.rs,9205-9240,10,Europe,RS,Belgrade,SOX
+iperf.fegis.nu,5201-5207,10,Europe,SE,Alvsjo,Hostup
+speedtest.kamel.network,5201-5205,1,Europe,SE,Kista,Kamel Networks
+185.76.9.135,5201,2x10,Europe,SE,Stockholm,DATAPACKET
+156.146.40.65,5201,2x10,Europe,SK,Bratislava,DATAPACKET
+37.19.218.65,5201,2x10,Europe,UA,Kyiv,DATAPACKET
+speed.cosmonova.net,5201-5209,40,Europe,UA,Kyiv,Cosmonova
+148.230.60.200,30001-30009,10,Latin America,BR,Sao Paulo,FortiSASE
+138.199.4.1,5201,2x10,Latin America,BR,São Paulo,DATAPACKET
+79.127.209.1,5201,2x10,Latin America,CL,Santiago,DATAPACKET
+156.146.53.53,5201,2x10,Latin America,CR,San Jose,DATAPACKET
+speedtest.masnet.ec,5201-5209,1,Latin America,EC,Santa Ana,MásNet
+speedtest1.flowjamaica.com,5506-5520,1,Latin America,JM,Portmore,Flow
+121.127.43.65,5201,2x10,Latin America,MX,Querétaro,DATAPACKET
+speedtest1.cwpanama.net,5505-5509,1,Latin America,PA,Colón,CW Panama
+speedtest6.cwpanama.net,5505-5509,1,Latin America,PA,Panamá,CW Panama
+speedtest.mtl2.ca.leaseweb.net,5201-5210,10,North America,CA,Montreal,LeaseWeb
+speedtest.goco.ca,9205-9240,10,North America,CA,Montreal,TELUS
+173.243.131.29,30001-30009,10,North America,CA,Ottawa,FortiSASE
+138.199.57.129,5201,2x10,North America,CA,Toronto,DATAPACKET
+96.45.43.6,30001-30009,10,North America,CA,Toronto,FortiSASE
+204.155.243.172,30001-30009,10,North America,CA,Toronto,FortiSASE
+66.35.30.9,30001-30009,10,North America,CA,Vancouver,FortiSASE
+speed.couch.ca,15201-15210,1,North America,CA,Victoria,couch.ca
+yyc-speedtest.xplore.ca,8070-8099,,North America,CA,Woodstock,Xplore
+ash.speedtest.clouvider.net,5200-5209,10,North America,US,Ashburn,Clouvider
+37.19.206.20,5201,2x10,North America,US,Ashburn,DATAPACKET
+66.35.22.79,30001-30009,10,North America,US,Ashburn,FortiSASE
+atl.speedtest.clouvider.net,5200-5209,10,North America,US,Atlanta,Clouvider
+185.152.66.67,5201,2x10,North America,US,Atlanta,DATAPACKET
+109.61.86.65,5201,2x10,North America,US,Boston,DATAPACKET
+speedtest.chi11.us.leaseweb.net,5201-5210,10,North America,US,Chicago,LeaseWeb
+185.93.1.65,5201,2x10,North America,US,Chicago,DATAPACKET
+chi.speedtest.clouvider.net,5201-5209,10,North America,US,Chicago,Clouvider
+speedtest.dal13.us.leaseweb.net,5201-5210,10,North America,US,Dallas,LeaseWeb
+dal.speedtest.clouvider.net,5200-5209,10,North America,US,Dallas,Clouvider
+89.187.164.1,5201,2x10,North America,US,Dallas,DATAPACKET
+dfw.speedtest.is.cc,5203-5210,100,North America,US,Dallas,InterServer.net
+66.35.27.207,30001-30009,10,North America,US,Dallas,FortiSASE
+37.19.216.1,5201,2x10,North America,US,Houston,DATAPACKET
+speedtest.nocix.net,5201-5205,200,North America,US,Kansas City,NOCIX
+la.speedtest.clouvider.net,5200-5209,10,North America,US,Los Angeles,Clouvider
+speedtest.lax12.us.leaseweb.net,5201-5210,10,North America,US,Los Angeles,LeaseWeb
+185.152.67.2,5201,2x10,North America,US,Los Angeles,DATAPACKET
+speedtest.mia11.us.leaseweb.net,5201-5210,10,North America,US,Miami,LeaseWeb
+195.181.162.195,5201,2x10,North America,US,Miami,DATAPACKET
+23.249.54.234,30002-30009,10,North America,US,Miami,FortiSASE
+spd-uswb.hostkey.com,5201-5209,10,North America,US,New York,HOSTKEY
+185.59.223.8,5201,2x10,North America,US,New York,DATAPACKET
+speedtest.nyc1.us.leaseweb.net,5201-5210,10,North America,US,New York City,LeaseWeb
+speedtest.phx1.us.leaseweb.net,5201-5210,10,North America,US,Phoenix,LeaseWeb
+phx.speedtest.clouvider.net,5200-5209,10,North America,US,Phoenix,Clouvider
+209.40.123.215,30001-30009,10,North America,US,Plano,FortiSASE
+speedtest.xmission.com,5201-5209,,North America,US,Salt Lake,XMISSION
+speedtest.sfo12.us.leaseweb.net,5201-5210,10,North America,US,San Francisco,LeaseWeb
+66.35.20.123,30001-30009,10,North America,US,San Jose,FortiSASE
+148.230.59.38,30001-30009,10,North America,US,San Jose,FortiSASE
+speedtest.sea11.us.leaseweb.net,5201-5210,10,North America,US,Seattle,LeaseWeb
+84.17.41.11,5201,2x10,North America,US,Seattle,DATAPACKET
+speedtest.wdc2.us.leaseweb.net,5201-5210,10,North America,US,Washington,LeaseWeb
+speedtest.syd12.au.leaseweb.net,5201-5210,10,Oceania,AU,Sydney,LeaseWeb
+143.244.63.144,5201,2x10,Oceania,AU,Sydney,DATAPACKET
+syd.proof.ovh.net,5201-5210,1,Oceania,AU,Sydney,OVH
+96.45.44.87,30001-30009,10,Oceania,AU,Sydney,FortiSASE
+speedtest.lagoon.nc,5202-5210,10,Oceania,NC,Noumea,Lagoon
+akl.linetest.nz,5301-5309,10,Oceania,NZ,Auckland,2Degrees
+72.1.86.46,30001-30009,10,Oceania,NZ,Auckland,FortiSASE
+chch.linetest.nz,5301-5309,10,Oceania,NZ,Christchurch,2Degrees
+154.81.51.4,5201,2x10,Oceania,PG,Port Moresby,DATAPACKET
+103.146.200.98,5201,,Oceania,PG,Port Moresby,DATAPACKET
