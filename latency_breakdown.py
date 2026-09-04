@@ -19,11 +19,12 @@ def fetch_latest_server_list():
     print("Download complete!")
     return True
 
-  except:
-    print(f"Error: failed to download server list: {requests.RequestException}")
+  except requests.RequestException as e:
+    print(f"Error: failed to download server list: {e}")
     return False
 
-fetch_latest_server_list()
+if not fetch_latest_server_list(): # fetching latest server list data
+  exit()
 with open(SERVER_LIST_FILE) as file:
   num_lines = sum(1 for line in file)
 
@@ -44,10 +45,17 @@ with open("traceroute_results.csv", "w", newline="") as csv_file:
     attempted_servers.add(line_number)
     line = linecache.getline(SERVER_LIST_FILE, line_number).strip()
     ip = line.split(',', 1)[0]
-    traceroute_result = subprocess.run(["traceroute", ip], capture_output=True, text=True)
+    try:
+      traceroute_result = subprocess.run(["traceroute", ip], capture_output=True, text=True, check=True)
+    except subprocess.CalledProcessError:
+      print(f"traceroute failed for {ip}")
+      continue
     responding_hops = []
     for traceroute_line in traceroute_result.stdout.splitlines():
-      hop_number_part = traceroute_line.split()[0]
+      parts = traceroute_line.split()
+      if not parts:
+        continue # skips empty line
+      hop_number_part = parts[0]
       if not hop_number_part.isdigit():
         continue
       hop_number = int(hop_number_part)
@@ -64,7 +72,7 @@ with open("traceroute_results.csv", "w", newline="") as csv_file:
       print(f"{ip}: destination did not respond")
       continue # if destination does not respond, consider it to be an unresponsive hop and try another ip
       # write the ip,hops,rtt to csv
-      print("writing results to csv for {ip}")
-      for hop_number, avg_rtt, _ in responding_hops:
-        writer.writerow([ip, hop_number, f"{avg_rtt:.3f}"])
+    print(f"writing results to csv for {ip}")
+    for hop_number, avg_rtt, _ in responding_hops:
+      writer.writerow([ip, hop_number, f"{avg_rtt:.3f}"])
     successful_servers += 1
