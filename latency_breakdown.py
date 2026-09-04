@@ -4,6 +4,9 @@ import random
 import linecache
 import subprocess
 import re
+import csv
+from collections import defaultdict
+import matplotlib.pyplot as plt
 
 SERVER_LIST_URL = "https://export.iperf3serverlist.net/listed_iperf3_servers.csv"
 SERVER_LIST_FILE = "listed_iperf3_servers.csv"
@@ -53,3 +56,139 @@ with open("traceroute_results.csv", "w", newline="") as csv_file:
         continue # skip unresponsive hops
       avg_rtt = round(sum(float(rtt) for rtt in rtts) / len(rtts), 3) # round the avg rtt to 3 decimal places
       writer.writerow([ip, hop_number, f"{avg_rtt:.3f}"])
+
+### QUESTION 2 - PART B ###
+
+RESULTS_FILE = "traceroute_results.csv"
+
+def load_data(filepath):
+    """
+    Load traceroute results from a CSV file into a dictionary grouped by
+    destination IP.
+
+    Args:
+        filepath (str): Path to the traceroute_results.csv file. Expected
+            columns are IP, HOP, RTT.
+
+    Returns:
+        dict[str, list[tuple[int, float]]]: A mapping from destination IP
+            (or hostname) to a list of (hop_number, cumulative_rtt_ms)
+            tuples, in the order they appear in the file.
+    """
+    print("Loading data for part 2b...")
+    data = defaultdict(list)  # ip -> list of (hop, rtt), in file order
+    with open(filepath, newline="") as f:
+        reader = csv.DictReader(f)  # reads header row automatically, gives us dict rows
+        for row in reader:
+            # Cast HOP to int and RTT to float since csv reads everything as strings
+            data[row["IP"]].append((int(row["HOP"]), float(row["RTT"])))
+    return data
+
+
+def compute_incremental_latencies(hops):
+    """
+    Convert a list of cumulative RTT values into per-hop incremental
+    latencies.
+
+    traceroute reports RTT as the round-trip time from the source machine
+    to that specific hop, meaning each value already includes the delay
+    of every hop before it. To find out how much latency each individual
+    hop actually contributes, we need to subtract the previous hop's
+    cumulative RTT from the current one.
+
+    Args:
+        hops (list[tuple[int, float]]): List of (hop_number, cumulative_rtt_ms)
+            tuples for a single destination IP, not necessarily sorted and
+            possibly missing some hop numbers (non-responsive hops filtered
+            out during collection).
+
+    Returns:
+        list[tuple[int, float]]: List of (hop_number, incremental_latency_ms)
+            tuples sorted by hop number, where incremental_latency_ms is the
+            latency added since the previous responsive hop.
+    """
+    print("Computing data for part 2b...")
+    # Sort by hop number first in case rows aren't already in order
+    hops = sorted(hops, key=lambda h: h[0])
+    increments = []
+    prev_rtt = 0.0  # essentially acts as the "latency so far" - starts at 0
+    for hop_number, rtt in hops:
+        # Incremental latency = how much RTT increased since the last hop
+        delta = max(rtt - prev_rtt, 0)  # clamp negatives just in case of jitter/measurement noise
+        increments.append((hop_number, delta))
+        prev_rtt = rtt  # update baseline for the next iteration
+    return increments
+
+def plot_stacked_bar(data):
+    """
+    Build and save a stacked bar chart showing the latency breakdown per
+    hop for each destination IP.
+
+    Each bar corresponds to one destination IP. Each colored segment
+    within a bar represents the incremental latency contributed by one
+    hop along the path. The total height of a bar equals the RTT to the
+    final (last responsive) hop for that destination.
+
+    Args:
+        data (dict[str, list[tuple[int, float]]]): Output of load_data(),
+            mapping each destination IP to its list of (hop, cumulative_rtt)
+            tuples.
+
+    Returns:
+        Nonthing returned, it just saves the chart to 'latency_breakdown.png'.
+    """
+    print("Starting plotting process for part 2b...")
+    ips = list(data.keys())  # x-axis categories: one per destination IP
+
+    # Convert every IP's cumulative RTTs into per-hop incremental latencies
+    per_ip_increments = {ip: compute_incremental_latencies(data[ip]) for ip in ips}
+
+    # Different IPs may have different numbers of responsive hops, so we
+    # need to know the tallest stack (most hop-segments) to loop over
+    max_segments = max(len(v) for v in per_ip_increments.values())
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    bottoms = [0] * len(ips)  # tracks the running height of each bar as we stack segments
+    cmap = plt.colormaps["tab20"]
+    colors = [cmap(i % cmap.N) for i in range(max_segments)]
+
+    # Build the stacked bar one "layer" (segment index) at a time, across all IPs.
+    # segment_index 0 = hop 1 for each IP (roughly), segment_index 1 = hop 2, etc.
+    for segment_index in range(max_segments):
+        segment_values = []
+
+        for ip in ips:
+            increments = per_ip_increments[ip]
+            if segment_index < len(increments):
+                # This IP has a hop at this segment index; use its latency value
+                segment_values.append(increments[segment_index][1])
+            else:
+                # This IP's path was shorter (fewer hops); pad with 0 so bars align
+                segment_values.append(0)
+
+        # Draw this layer across all bars at once, stacked on top of previous layers
+        ax.bar(
+            ips,
+            segment_values,
+            bottom=bottoms,  # start each bar's segment where the previous one ended
+            color=cmap(segment_index / max(max_segments - 1, 1)),  # vary color by hop depth
+            edgecolor="white",
+            linewidth=0.3,
+        )
+
+        # Update running totals so the next layer stacks on top correctly
+        bottoms = [b + v for b, v in zip(bottoms, segment_values)]
+
+    ax.set_ylabel("Round-Trip Time (ms)")
+    ax.set_xlabel("Destination IP")
+    ax.set_title("Latency Breakdown by Hop for Each Destination")
+    plt.xticks(rotation=30, ha="right")  # angle labels so long hostnames don't overlap
+    plt.tight_layout()
+    plt.savefig("latency_breakdown.png", dpi=150)  # save chart as an image file
+    plt.show()  # display the chart in a window (if running in a GUI-capable environment)
+
+
+if __name__ == "__main__":
+    # Entry point: load the traceroute data, then generate and save the chart
+    data = load_data(RESULTS_FILE)
+    plot_stacked_bar(data)
