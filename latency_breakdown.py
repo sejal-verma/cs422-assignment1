@@ -4,6 +4,10 @@ import random
 import linecache
 import subprocess
 import re
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# === PART A - collection and cleaning of network diagnostic data ===
 
 SERVER_LIST_URL = "https://export.iperf3serverlist.net/listed_iperf3_servers.csv"
 SERVER_LIST_FILE = "listed_iperf3_servers.csv"
@@ -76,3 +80,35 @@ with open("traceroute_results.csv", "w", newline="") as csv_file:
     for hop_number, avg_rtt, _ in responding_hops:
       writer.writerow([ip, hop_number, f"{avg_rtt:.3f}"])
     successful_servers += 1
+
+# === PART B - stacked bar chart ===
+
+
+# === PART C - scatter plot ===
+
+# Load the data from the CSV file
+df = pd.read_csv('traceroute_results.csv')
+
+# Initialize the plot with a specific size
+plt.figure(figsize=(10, 6))
+
+# Group the data by Destination IP and plot each group as a separate scatter series
+for ip, group in df.groupby('IP'):
+    plt.scatter(group['HOP'], group['RTT'], label=ip, alpha=0.8, s=60)
+
+# Add titles and labels
+plt.title('Hop Count vs. Round-Trip Time (RTT)')
+plt.xlabel('Hop Count')
+plt.ylabel('RTT (ms)')
+
+# Place the legend outside the plot area
+plt.legend(title='Destination IP', bbox_to_anchor=(1.05, 1), loc='upper left')
+
+# Add a grid for easier reading
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# Adjust layout to ensure the legend isn't cut off
+plt.tight_layout()
+
+# Display the plot
+plt.show()
