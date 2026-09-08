@@ -20,8 +20,10 @@ PING_COUNT = "10"      # number of ping probes sent per host in Part 1
 COUNT_FLAG = "-n" if platform.system().lower() == "windows" else "-c"
 # macOS/Linux ping print "round-trip min/avg/max/...", Windows differs -- this
 # pattern assumes macOS/Linux wording, matching the dev/grading environment
-PING_PATTERN = r"PING.*?\(([\d\.]+)\):.*?\n.*?round-trip min/avg/max/stddev = ([\d\.]+)/([\d\.]+)/([\d\.]+)"
-
+PING_PATTERNS = [
+    r"PING.*?\(([\d\.]+)\).*?\n.*?rtt min/avg/max/mdev = ([\d\.]+)/([\d\.]+)/([\d\.]+)",       # Linux
+    r"PING.*?\(([\d\.]+)\):.*?\n.*?round-trip min/avg/max/stddev = ([\d\.]+)/([\d\.]+)/([\d\.]+)",  # macOS
+]
 
 def fetch_latest_server_list():
     """Download the current iperf3 server list CSV from the public source."""
@@ -81,14 +83,15 @@ def haversine_km(lat1, lon1, lat2, lon2):
 def ping_worker(host):
     """Ping one host PING_COUNT times and parse out min/avg/max RTT. Returns None on failure."""
     # -c sets ping count on macOS/Linux, -n sets it on Windows
-    result = subprocess.run(["/sbin/ping", COUNT_FLAG, PING_COUNT, host], capture_output=True, text=True)
+    result = subprocess.run(["ping", COUNT_FLAG, PING_COUNT, host], capture_output=True, text=True)
     if result.returncode != 0:
         return None  # host unreachable -- skip per assignment instructions
 
-    match = re.search(PING_PATTERN, result.stdout, re.DOTALL)
-    if match:
-        ip, min_rtt, avg_rtt, max_rtt = match.groups()
-        return [ip, min_rtt, avg_rtt, max_rtt]
+    for pattern in PING_PATTERNS:
+        match = re.search(pattern, result.stdout, re.DOTALL)
+        if match:
+            ip, min_rtt, avg_rtt, max_rtt = match.groups()
+            return [ip, min_rtt, avg_rtt, max_rtt]
     return None
 
 
