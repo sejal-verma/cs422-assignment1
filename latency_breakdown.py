@@ -210,7 +210,7 @@ def plot_stacked_bar(data):
     ax.set_title("Latency Breakdown by Hop for Each Destination")
     plt.xticks(rotation=30, ha="right")  # angle labels so long hostnames don't overlap
     plt.tight_layout()
-    plt.savefig("latency_breakdown.png", dpi=150)  # save chart as an image file
+    plt.savefig("latency_breakdown.pdf")  # save chart as a png
     plt.show()  # display the chart in a window (if running in a GUI-capable environment)
 
 
