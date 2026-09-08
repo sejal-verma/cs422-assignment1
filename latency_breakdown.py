@@ -211,7 +211,6 @@ def plot_stacked_bar(data):
     plt.xticks(rotation=30, ha="right")  # angle labels so long hostnames don't overlap
     plt.tight_layout()
     plt.savefig("latency_breakdown.pdf")  # save chart as a png
-    plt.show()  # display the chart in a window (if running in a GUI-capable environment)
 
 
 if __name__ == "__main__":
