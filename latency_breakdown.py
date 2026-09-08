@@ -212,7 +212,6 @@ def plot_stacked_bar(data):
     plt.tight_layout()
     plt.savefig("latency_breakdown.pdf")  # save chart as a png
 
-
 if __name__ == "__main__":
     # Entry point: load the traceroute data, then generate and save the chart
     data = load_data(RESULTS_FILE)
