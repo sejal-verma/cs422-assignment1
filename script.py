@@ -157,24 +157,24 @@ def plot_distance_vs_rtt(df):
     plt.xlabel("Distance (km)")
     plt.ylabel("Average RTT (ms)")
     plt.tight_layout()
-    plt.savefig("distance_vs_average_rtt.png")
+    plt.savefig("distance_vs_average_rtt.pdf")
     plt.close()
 
 
 def run_part_one():
     """Ping every server in the list, geolocate responders, and plot distance vs RTT."""
     my_ip = get_my_ip()
-    my_lat, my_lon = locate(my_ip)
+    #my_lat, my_lon = locate(my_ip)
     print("My IP:", my_ip)
-    print("My location:", my_lat, my_lon)
+    #print("My location:", my_lat, my_lon)
 
     hosts = load_all_ips(SERVER_LIST_FILE) + [my_ip]  # include ourselves as one of the pinged destinations
 
     run_ping_tests(hosts)
-    add_distances(my_ip, my_lat, my_lon)
+    #add_distances(my_ip, my_lat, my_lon)
 
-    df = pd.read_csv(PING_RESULTS_FILE)
-    plot_distance_vs_rtt(df)
+    #df = pd.read_csv(PING_RESULTS_FILE)
+    #plot_distance_vs_rtt(df)
 
 
 # === PART 2A - collect traceroute data for random IPs ===
