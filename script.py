@@ -157,7 +157,7 @@ def plot_distance_vs_rtt(df):
     plt.xlabel("Distance (km)")
     plt.ylabel("Average RTT (ms)")
     plt.tight_layout()
-    plt.savefig("distance_vs_average_rtt.png")
+    plt.savefig("distance_vs_average_rtt.pdf")
     plt.close()
 
 
